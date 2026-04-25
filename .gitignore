@@ -1,0 +1,10 @@
+# Datos crudos (pesan mucho, no se suben)
+data/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# VS Code
+.vscode/
