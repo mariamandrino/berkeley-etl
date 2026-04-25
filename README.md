@@ -14,19 +14,9 @@ berkeley-etl/
 │   ├── raw/          ← datos originales, nunca se modifican
 │   └── processed/    ← datos limpios generados por el código
 ├── src/              ← código Python
-│   ├── explorar.py   ← análisis inicial del dataset
-│   └── limpiar.py    ← limpieza y corrección de tipos
 ├── output/           ← archivos finales (GeoJSON para QGIS)
 └── README.md
-
-## Estado del proyecto
-- [x] Exploración del dataset
-- [x] Limpieza de datos (nulos, tipos, coordenadas)
-- [ ] Transformación (agregación por períodos)
-- [ ] Exportación a GeoJSON
-- [ ] Carga en SQLite
 
 ## Tecnologías
 - Python + pandas
 - QGIS (visualización geoespacial)
-- SQLite (base de datos)
