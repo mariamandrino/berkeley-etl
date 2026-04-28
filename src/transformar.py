@@ -58,5 +58,5 @@ print(df_final.head(10))
 print("\nDimensiones:", df_final.shape)
 
 # --- PASO 5: Guardado del resultado final ---
-df_final.to_csv("data/processed/temperaturas_transformadas.csv")
+df_final.to_csv("data/processed/temperaturas_transformadas.csv", index=False)
 print("Archivo guardado correctamente en data/processed/temperaturas_transformadas.csv")

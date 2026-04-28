@@ -5,7 +5,7 @@ import pandas as pd
 df = pd.read_csv("data/raw/GlobalLandTemperaturesByCity.csv")
 
 # Número de filas y columnas
-print("Dimensiones del CSV:", df.shape)
+print("\nDimensiones del CSV:", df.shape)
 
 # Nombres de las columnas
 print("\nColumnas:", df.columns.tolist())
