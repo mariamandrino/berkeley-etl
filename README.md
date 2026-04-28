@@ -22,6 +22,7 @@ berkeley-etl/
 │   ├── transformar.py      ← agregación por períodos y propagación de errores
 │   ├── exportar_geojson.py ← exportación a GeoJSON para QGIS
 │   └── consultar_sqlite.py ← consultas SQL sobre la base de datos
+│   └── cargar_sqlite.py    ← carga SQL sobre la base de datos
 ├── output/
 │   ├── temperaturas.geojson  ← para visualización en QGIS
 │   └── temperaturas.db       ← base de datos SQLite
@@ -38,6 +39,7 @@ python src/limpiar.py
 python src/transformar.py
 python src/exportar_geojson.py
 python src/cargar_sqlite.py
+python src/consultar_sqlite.py
 ```
 
 ## Metodología
@@ -51,7 +53,7 @@ python src/cargar_sqlite.py
 - Conversión de fechas a tipo datetime
 - Conversión de coordenadas de formato texto (57.05N) a decimal (57.05)
 - Temperatura media por ciudad en cada período
-- Propagación de errores estándar sobre la incertidumbre de medición
+- Propagación de errores estándar sobre la incertidumbre en la medida de la temperatura
 - Diferencia de temperaturas entre períodos con incertidumbre propagada
 
 ### Propagación de errores
@@ -82,37 +84,3 @@ La incertidumbre de la diferencia entre dos períodos:
 - pandas
 - SQLite
 - QGIS (visualización geoespacial, pendiente)# Berkeley Earth ETL
-
-Pipeline ETL sobre datos de temperatura superficial de Berkeley Earth.
-Incluye limpieza, transformación y exportación a GeoJSON para visualización en QGIS.
-
-## Fuente de datos
-[Berkeley Earth en Kaggle](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data)
-
-Descargar `GlobalLandTemperaturesByCity.csv` y colocar en `data/raw/`.
-
-## Estructura del proyecto
-
-```
-berkeley-etl/
-├── data/
-│   ├── raw/          ← datos originales, nunca se modifican
-│   └── processed/    ← datos limpios generados por el código
-├── src/              ← código Python
-│   ├── explorar.py   ← análisis inicial del dataset
-│   └── limpiar.py    ← limpieza y corrección de tipos
-├── output/           ← archivos finales (GeoJSON para QGIS)
-└── README.md
-```
-
-## Estado del proyecto
-- [x] Exploración del dataset
-- [x] Limpieza de datos (nulos, tipos, coordenadas)
-- [ ] Transformación (agregación por períodos)
-- [ ] Exportación a GeoJSON
-- [ ] Carga en SQLite
-
-## Tecnologías
-- Python + pandas
-- QGIS (visualización geoespacial)
-- SQLite (base de datos)
